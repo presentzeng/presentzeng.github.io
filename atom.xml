@@ -6,7 +6,7 @@
   <link href="https://presentzeng.github.io/atom.xml" rel="self"/>
   
   <link href="https://presentzeng.github.io/"/>
-  <updated>2022-04-14T15:35:04.879Z</updated>
+  <updated>2022-04-18T07:17:46.860Z</updated>
   <id>https://presentzeng.github.io/</id>
   
   <author>
@@ -17,9 +17,58 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Speculation on forex</title>
+    <link href="https://presentzeng.github.io/2022/04/17/Speculation_on_forex/"/>
+    <id>https://presentzeng.github.io/2022/04/17/Speculation_on_forex/</id>
+    <published>2022-04-16T16:00:00.000Z</published>
+    <updated>2022-04-18T07:17:46.860Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Speculation on forex</strong></p><blockquote><p>Editing</p></blockquote><h4 id="Why-Forex"><a href="#Why-Forex" class="headerlink" title="Why Forex"></a>Why Forex</h4><ol><li>It is a huge market, No one can manipulate it</li><li>The source and signal is open and public</li><li>It got low entry barriers, you can buy or sell 0.01 lot with 1 dollar</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;Speculation on forex&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Editing&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;Why-Forex&quot;&gt;&lt;a href=&quot;#Why-Forex&quot; class=&quot;header</summary>
+      
+    
+    
+    
+    
+    <category term="Fun" scheme="https://presentzeng.github.io/tags/Fun/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Common Weakness</title>
+    <link href="https://presentzeng.github.io/2020/02/21/Common_Weakness/"/>
+    <id>https://presentzeng.github.io/2020/02/21/Common_Weakness/</id>
+    <published>2020-02-20T16:00:00.000Z</published>
+    <updated>2022-04-18T07:26:01.259Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Common-Weakness"><a href="#Common-Weakness" class="headerlink" title="Common Weakness"></a>Common Weakness</h1><blockquote><p>Editing</p></blockquote><h3 id="Input-validation"><a href="#Input-validation" class="headerlink" title="Input validation"></a>Input validation</h3><p>If we don’t validate input properly, Hacker can alter control flow,  change the code execution, or get the Important file informations</p><p>e.g:<br><a href="https://cwe.mitre.org/data/definitions/790.html">CWE-790</a><br><a href="https://cwe.mitre.org/data/definitions/116.html">CWE-116</a><br><a href="https://cwe.mitre.org/data/definitions/138.html">CWE-138</a></p><blockquote><p>Defense</p></blockquote><ol><li>Consider all the aspect:Value Type /  Length / Format / Expired Time / Effect Scope and so on</li><li>Assume all input is malicious, Only accept the thing that we know, That means we only set the whiltlist</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Common-Weakness&quot;&gt;&lt;a href=&quot;#Common-Weakness&quot; class=&quot;headerlink&quot; title=&quot;Common Weakness&quot;&gt;&lt;/a&gt;Common Weakness&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;Editi</summary>
+      
+    
+    
+    
+    
+    <category term="Security" scheme="https://presentzeng.github.io/tags/Security/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Born</title>
-    <link href="https://presentzeng.github.io/2000/01/01/index/"/>
-    <id>https://presentzeng.github.io/2000/01/01/index/</id>
+    <link href="https://presentzeng.github.io/2000/01/01/Born/"/>
+    <id>https://presentzeng.github.io/2000/01/01/Born/</id>
     <published>1999-12-31T16:00:00.000Z</published>
     <updated>2022-04-14T15:35:04.879Z</updated>
     

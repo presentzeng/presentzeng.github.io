@@ -13,7 +13,7 @@
 
     <title>
         
-        Tags - (self)
+        Common Weakness - (self)
         
     </title>
 
@@ -66,7 +66,7 @@
                     <span>HOME</span>
                 </a>
             </li>
-            <li  class=active >
+            <li >
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
                     <span>TAGS</span>
@@ -101,6 +101,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Common-Weakness"><span class="toc-text">Common Weakness</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-validation"><span class="toc-text">Input validation</span></a></li></ol></li></ol></li></ol>
+</div>
+    
 </div>
 
 
@@ -124,73 +128,51 @@
     
     <div class="index-middle">
         <!-- Main Content -->
-        <div id='tag_cloud' class="tags">
-    
-    <a href="#Fun" title="Fun" rel="2">Fun</a>
-    
-    <a href="#Security" title="Security" rel="1">Security</a>
-    
-</div>
-
-<!-- 标签列表 -->
+        
 
 
-<div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Fun">
-                    <span class="tag-text">Fun</span>
-                </span>
-    
-    <!-- <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    </li> -->
-    <div class="post-preview">
-        <a href="/2000/01/01/Born/">
-            <h2 class="post-title">
-                Born
-            </h2>
-            
-        </a>
-        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+<div class="post-container">
+    <div class="post-title">
+        Common Weakness
     </div>
-    
-    <!-- <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    </li> -->
-    <div class="post-preview">
-        <a href="/2022/04/17/Speculation_on_forex/">
-            <h2 class="post-title">
-                Speculation on forex
-            </h2>
-            
-        </a>
-        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-    </div>
-    
-</div>
 
-<div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Security">
-                    <span class="tag-text">Security</span>
-                </span>
-    
-    <!-- <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    </li> -->
-    <div class="post-preview">
-        <a href="/2020/02/21/Common_Weakness/">
-            <h2 class="post-title">
-                Common Weakness
-            </h2>
-            
-        </a>
-        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    <div class="post-meta">
+        <span class="attr">Post：<span>2020-02-21 00:00:00</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#Security" title="Security">Security</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
     </div>
-    
-</div>
+    <div class="post-content no-indent">
+        <h1 id="Common-Weakness"><a href="#Common-Weakness" class="headerlink" title="Common Weakness"></a>Common Weakness</h1><blockquote>
+<p>Editing</p>
+</blockquote>
+<h3 id="Input-validation"><a href="#Input-validation" class="headerlink" title="Input validation"></a>Input validation</h3><p>If we don’t validate input properly, Hacker can alter control flow,  change the code execution, or get the Important file informations</p>
+<p>e.g:<br><a target="_blank" rel="noopener" href="https://cwe.mitre.org/data/definitions/790.html">CWE-790</a><br><a target="_blank" rel="noopener" href="https://cwe.mitre.org/data/definitions/116.html">CWE-116</a><br><a target="_blank" rel="noopener" href="https://cwe.mitre.org/data/definitions/138.html">CWE-138</a></p>
+<blockquote>
+<p>Defense</p>
+</blockquote>
+<ol>
+<li>Consider all the aspect:Value Type /  Length / Format / Expired Time / Effect Scope and so on</li>
+<li>Assume all input is malicious, Only accept the thing that we know, That means we only set the whiltlist</li>
+</ol>
 
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
 
     </div>
 </div>
@@ -254,7 +236,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
@@ -263,6 +245,22 @@
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
+
+
+    <script src="https://giscus.app/client.js"
+        data-repo="presentzeng/giscus"
+        data-repo-id="R_kgDOHLeq3Q"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOHLeq3c4COlGu"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
 
 
 
