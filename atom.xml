@@ -47,9 +47,9 @@
     <link href="https://presentzeng.github.io/2020/02/21/Common_Weakness/"/>
     <id>https://presentzeng.github.io/2020/02/21/Common_Weakness/</id>
     <published>2020-02-20T16:00:00.000Z</published>
-    <updated>2022-04-18T07:26:01.259Z</updated>
+    <updated>2022-04-18T07:28:55.598Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Common-Weakness"><a href="#Common-Weakness" class="headerlink" title="Common Weakness"></a>Common Weakness</h1><blockquote><p>Editing</p></blockquote><h3 id="Input-validation"><a href="#Input-validation" class="headerlink" title="Input validation"></a>Input validation</h3><p>If we don’t validate input properly, Hacker can alter control flow,  change the code execution, or get the Important file informations</p><p>e.g:<br><a href="https://cwe.mitre.org/data/definitions/790.html">CWE-790</a><br><a href="https://cwe.mitre.org/data/definitions/116.html">CWE-116</a><br><a href="https://cwe.mitre.org/data/definitions/138.html">CWE-138</a></p><blockquote><p>Defense</p></blockquote><ol><li>Consider all the aspect:Value Type /  Length / Format / Expired Time / Effect Scope and so on</li><li>Assume all input is malicious, Only accept the thing that we know, That means we only set the whiltlist</li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="Common-Weakness"><a href="#Common-Weakness" class="headerlink" title="Common Weakness"></a>Common Weakness</h1><blockquote><p>Editing</p></blockquote><h3 id="Input-validation"><a href="#Input-validation" class="headerlink" title="Input validation"></a>Input validation</h3><p>If we don’t validate input properly, Hacker can alter control flow,  change the code execution, or get the Important file informations</p><p>e.g:<br><a href="https://cwe.mitre.org/data/definitions/790.html">CWE-790</a><br><a href="https://cwe.mitre.org/data/definitions/116.html">CWE-116</a><br><a href="https://cwe.mitre.org/data/definitions/138.html">CWE-138</a></p><h3 id="Defense"><a href="#Defense" class="headerlink" title="Defense"></a>Defense</h3><ol><li>Consider all the aspect:Value Type /  Length / Format / Expired Time / Effect Scope and so on</li><li>Assume all input is malicious, Only accept the thing that we know, That means we only set the whiltlist</li></ol>]]></content>
     
     
       

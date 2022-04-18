@@ -102,7 +102,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Common-Weakness"><span class="toc-text">Common Weakness</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-validation"><span class="toc-text">Input validation</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Common-Weakness"><span class="toc-text">Common Weakness</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-validation"><span class="toc-text">Input validation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Defense"><span class="toc-text">Defense</span></a></li></ol></li></ol></li></ol>
 </div>
     
 </div>
@@ -156,10 +156,7 @@
 </blockquote>
 <h3 id="Input-validation"><a href="#Input-validation" class="headerlink" title="Input validation"></a>Input validation</h3><p>If we don’t validate input properly, Hacker can alter control flow,  change the code execution, or get the Important file informations</p>
 <p>e.g:<br><a target="_blank" rel="noopener" href="https://cwe.mitre.org/data/definitions/790.html">CWE-790</a><br><a target="_blank" rel="noopener" href="https://cwe.mitre.org/data/definitions/116.html">CWE-116</a><br><a target="_blank" rel="noopener" href="https://cwe.mitre.org/data/definitions/138.html">CWE-138</a></p>
-<blockquote>
-<p>Defense</p>
-</blockquote>
-<ol>
+<h3 id="Defense"><a href="#Defense" class="headerlink" title="Defense"></a>Defense</h3><ol>
 <li>Consider all the aspect:Value Type /  Length / Format / Expired Time / Effect Scope and so on</li>
 <li>Assume all input is malicious, Only accept the thing that we know, That means we only set the whiltlist</li>
 </ol>
