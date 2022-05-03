@@ -43,6 +43,32 @@
   </entry>
   
   <entry>
+    <title>6S081 Study Notes</title>
+    <link href="https://presentzeng.github.io/2022/02/01/6S081/"/>
+    <id>https://presentzeng.github.io/2022/02/01/6S081/</id>
+    <published>2022-01-31T16:00:00.000Z</published>
+    <updated>2022-05-03T09:53:46.995Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Introduction-amp-amp-Link"><a href="#Introduction-amp-amp-Link" class="headerlink" title="Introduction &amp;&amp; Link:"></a>Introduction &amp;&amp; Link:</h1><p>It is a Note about The MIT course 6.S081. arranged by following it’s lab order<br><a href="https://pdos.csail.mit.edu/6.S081/2021/index.html">https://pdos.csail.mit.edu/6.S081/2021/index.html</a><br><a href="https://pdos.csail.mit.edu/6.S081/2021/labs/util.html">https://pdos.csail.mit.edu/6.S081/2021/labs/util.html</a></p><h1 id="Lab1"><a href="#Lab1" class="headerlink" title="Lab1"></a>Lab1</h1><h2 id="Key-Points"><a href="#Key-Points" class="headerlink" title="Key Points"></a>Key Points</h2><ol><li>The kernel uses the hardware protection mechanisms to ensure that each process executing user space can access only its own memory</li><li>Fork creates a new process, called the child process, with exactly the same memory contents as the calling process</li></ol><h4 id="pingpong"><a href="#pingpong" class="headerlink" title="pingpong"></a>pingpong</h4><ul><li><p>what is the difference of two code block</p><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int fd[<span class="number">2</span>]<span class="comment">;</span></span><br><span class="line"><span class="attribute">pid</span>=fork()<span class="comment">;</span></span><br><span class="line">pipe(fd)<span class="comment">;</span></span><br></pre></td></tr></table></figure><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">pid</span>=fork()<span class="comment">;</span></span><br><span class="line">int fd[<span class="number">2</span>]<span class="comment">;</span></span><br><span class="line">pipe(fd)<span class="comment">;</span></span><br></pre></td></tr></table></figure><p>all have 4 fd genereated<br>but the first one two process’s fd have no connection.<br>and the second one has</p></li><li><p>remember to exit at every child process, otherwise it will execute the code below</p></li></ul><h4 id="xargs"><a href="#xargs" class="headerlink" title="xargs"></a>xargs</h4><ul><li>what is char* a[10]?<blockquote><p>format a =  {char* char* …. char*}</p></blockquote></li><li>exec(command, argv)<blockquote><p>the argv[0] should be not be filled with parameter but with command name</p></blockquote></li><li>there are two types format: “123\n456” and 123 456, how we deal with it.<blockquote><p>we can devide with space of \n and treate “ as one of the char, delete it at the last step</p></blockquote></li><li>we should clear all the uninitial string otherwise we will get random value like “&quot; which will cause a lot of confusion to us<br><img src="/img/1650726024.png" alt="random value"></li><li>if you wanna pass char par[10][10] as a parameter in function you should write prototype like below<blockquote><p>func(char * par[10][10]), that means you should write out the dimension of it</p></blockquote></li><li>what is the difference <blockquote><p>char *par[] = {}; char * par[10] = {}; char *par[10],  the former two are empty array, the last one is the right defination</p></blockquote></li><li>why we should fork and call exec <blockquote><p>exec system call will replace the the calling process, that is why</p></blockquote></li><li>what is the difference between strlen and sizeof<br>pls Do use sizeof with memset</li><li>we can compare char with == but we should compare string by using strcmp</li><li>“” is a string ‘’ is a char</li><li>how to use pointer array properly<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *pass_par[10]; </span><br><span class="line"><span class="keyword">char</span> * <span class="keyword">test</span> = <span class="string">&quot;xargs&quot;</span>;</span><br><span class="line">pass_par[0] = <span class="keyword">test</span>;</span><br><span class="line">printf(<span class="string">&quot;%s\n&quot;</span>, pass_par[0]);</span><br><span class="line"> </span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Introduction-amp-amp-Link&quot;&gt;&lt;a href=&quot;#Introduction-amp-amp-Link&quot; class=&quot;headerlink&quot; title=&quot;Introduction &amp;amp;&amp;amp; Link:&quot;&gt;&lt;/a&gt;Introdu</summary>
+      
+    
+    
+    
+    
+    <category term="Linux" scheme="https://presentzeng.github.io/tags/Linux/"/>
+    
+    <category term="System" scheme="https://presentzeng.github.io/tags/System/"/>
+    
+    <category term="OS" scheme="https://presentzeng.github.io/tags/OS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Common Weakness</title>
     <link href="https://presentzeng.github.io/2020/02/21/Common_Weakness/"/>
     <id>https://presentzeng.github.io/2020/02/21/Common_Weakness/</id>
