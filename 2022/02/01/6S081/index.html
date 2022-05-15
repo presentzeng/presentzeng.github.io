@@ -102,7 +102,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction-amp-amp-Link"><span class="toc-text">Introduction &amp;&amp; Link:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lab1"><span class="toc-text">Lab1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Key-Points"><span class="toc-text">Key Points</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pingpong"><span class="toc-text">pingpong</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#xargs"><span class="toc-text">xargs</span></a></li></ol></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction-amp-amp-Link"><span class="toc-text">Introduction &amp;&amp; Link:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lab1"><span class="toc-text">Lab1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Key-Points"><span class="toc-text">Key Points</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pingpong"><span class="toc-text">pingpong</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#xargs"><span class="toc-text">xargs</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lab2"><span class="toc-text">Lab2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mode"><span class="toc-text">Mode</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#System-call-tracing"><span class="toc-text">System call tracing</span></a></li></ol></li></ol></li></ol></li></ol>
 </div>
     
 </div>
@@ -202,6 +202,30 @@
 <li>“” is a string ‘’ is a char</li>
 <li>how to use pointer array properly<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *pass_par[10]; </span><br><span class="line"><span class="keyword">char</span> * <span class="keyword">test</span> = <span class="string">&quot;xargs&quot;</span>;</span><br><span class="line">pass_par[0] = <span class="keyword">test</span>;</span><br><span class="line">printf(<span class="string">&quot;%s\n&quot;</span>, pass_par[0]);</span><br><span class="line"> </span><br></pre></td></tr></table></figure></li>
 </ul>
+<h1 id="Lab2"><a href="#Lab2" class="headerlink" title="Lab2"></a>Lab2</h1><h2 id="Mode"><a href="#Mode" class="headerlink" title="Mode"></a>Mode</h2><blockquote>
+<p>mode</p>
+</blockquote>
+<p>Machine<br>mode is mostly intended for configuring a computer</p>
+<p>supervisor mode is for executing privileged instructions: for example, enabling and disabling interrupts, reading and writing the register that holds the address of a page<br>table</p>
+<p>CPUs provide a special instruction that switches the CPU from user mode<br>to supervisor mode. (RISC-V provides<br>the ecall)</p>
+<p>xv6 is monolithic kernel, with all kernel in one mode</p>
+<blockquote>
+<p>Kernel</p>
+</blockquote>
+<p>the hardware only uses the low 39 bits when looking up virtual addresses in page tables; and<br>xv6 only uses 38 of those 39 bits. Thus, the maximum address is 2<br>38 − 1 = 0x3fffffffff</p>
+<p>Each process has two stacks: a user stack and a kernel stack</p>
+<p>In Entry.S it’s _entry set up a stack so that xv6 can run C code start.c</p>
+<h4 id="System-call-tracing"><a href="#System-call-tracing" class="headerlink" title="System call tracing"></a>System call tracing</h4><p>Preparation:</p>
+<ol>
+<li>read at least twice the instructions</li>
+<li>add print command to check the execute order of each function</li>
+<li>you can check how the kill pass all the argument</li>
+</ol>
+<p>Note:</p>
+<ol>
+<li>The most important part is how to pass the argument to the system call</li>
+<li>To read the document, you will know the argument is stored in which Register, and you can use function argint<br>to “Fetch the nth 32-bit system call argument”</li>
+</ol>
 
         
         <br />
