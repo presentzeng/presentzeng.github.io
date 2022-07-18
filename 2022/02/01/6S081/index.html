@@ -102,7 +102,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction-amp-amp-Link"><span class="toc-text">Introduction &amp;&amp; Link:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lab1-Utilities"><span class="toc-text">Lab1 Utilities</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Key-Points"><span class="toc-text">Key Points</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pingpong"><span class="toc-text">pingpong</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xargs"><span class="toc-text">xargs</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lab2-System-calls"><span class="toc-text">Lab2 System calls</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mode"><span class="toc-text">Mode</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#System-call-tracing"><span class="toc-text">System call tracing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sysinfo"><span class="toc-text">Sysinfo</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lab3-Page-Table"><span class="toc-text">Lab3  Page Table</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction-amp-amp-Link"><span class="toc-text">Introduction &amp;&amp; Link:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lab1-Utilities"><span class="toc-text">Lab1 Utilities</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Key-Points"><span class="toc-text">Key Points</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pingpong"><span class="toc-text">pingpong</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xargs"><span class="toc-text">xargs</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lab2-System-calls"><span class="toc-text">Lab2 System calls</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mode"><span class="toc-text">Mode</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#System-call-tracing"><span class="toc-text">System call tracing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sysinfo"><span class="toc-text">Sysinfo</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lab3-Page-Table"><span class="toc-text">Lab3  Page Table</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rewrite-Walk-in-non-recursive-way"><span class="toc-text">rewrite Walk in non recursive way</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Free-process%E2%80%99s-memory"><span class="toc-text">Free process’s memory</span></a></li></ol></li></ol></li></ol>
 </div>
     
 </div>
@@ -243,8 +243,31 @@
 <li>VA and PA is translated by map</li>
 <li>MMU won’t store any map</li>
 <li>kernel will write the map value into the satp register</li>
-<li>page is 4 $B in the Risk V</li>
+<li>page is 4 KB in the Risk V</li>
 <li>for satp, it is divided into three pieces 25+27+12, 12 is the byte within the page, index is for the map to translate to physical page</li>
+<li>every process keeps it’s own page table</li>
+<li>Kernel is using “direct mapping”</li>
+</ol>
+<p>The Steps to translate the virtual to physical</p>
+<ol>
+<li>the virtual address is devided into PTE-selector and offset, for example 9+9+9(PTE-selector) + 12(Offset)</li>
+<li>for the first page table it is satp + value(first 9 bit), in it we can get the PPN of next page(it’s physical address)</li>
+</ol>
+<h3 id="rewrite-Walk-in-non-recursive-way"><a href="#rewrite-Walk-in-non-recursive-way" class="headerlink" title="rewrite Walk in non recursive way"></a>rewrite Walk in non recursive way</h3><ol>
+<li>pte = page table entries</li>
+<li>ppn = physical table number</li>
+<li>pagetable is an array string like below<br>[pte1, pte2, pte3 …. pte512]</li>
+<li> Each PTE contains a 44-bit physical page<br>number (PPN) and some flags</li>
+<li>Sv39 Risc-V only uses bottom 27 bit for virtual address, that means 27 power of 2 is the max number of PTES</li>
+<li>each pte actually uses 64 bit(8 byte), but it only uses the bottom 54 bits</li>
+<li>each page table has 512 ptes, in total it is 4096 byte</li>
+<li>pte = ppn(44) + flag(12)</li>
+<li>physical address is 56 bit<br>10 last physical address(56) = ppn(44) + Virtual offset(12)</li>
+<li>the middle physical(56)= ppn(44)+ empty zero(12)</li>
+</ol>
+<h3 id="Free-process’s-memory"><a href="#Free-process’s-memory" class="headerlink" title="Free process’s memory"></a>Free process’s memory</h3><ol>
+<li>it should free it’s page table and the physical memory it refers to</li>
+<li>Is only the leaf pagetable has the PTE_R PTE_W flag?</li>
 </ol>
 
         
